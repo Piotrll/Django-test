@@ -14,3 +14,14 @@ def summary_per_category(queryset):
         .values_list('category_name', 's')
     ))
 
+
+def search_by_date(queryset):
+    return OrderedDict(sorted(
+        queryset
+        .annotate(date=Coalesce('date', Value('-')))
+        .order_by()
+        .values('date')
+        .annotate(s='date')
+        .values_list('date', 's')
+    ))
+

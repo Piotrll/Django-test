@@ -70,6 +70,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
+DATE_INPUT_FORMATS = ['%Y-%m-%d']
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases

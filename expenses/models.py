@@ -12,6 +12,17 @@ class Category(models.Model):
         return f'{self.name}'
 
 
+class Date(models.Model):
+    class Meta:
+        ordering = ('date1', 'date2')
+
+    date1 = models.DateField()
+    date2 = models.DateField()
+
+    def __str__(self):
+        return f'{self.date1}{self.date2}'
+
+
 class Expense(models.Model):
     class Meta:
         ordering = ('-date', '-pk')
